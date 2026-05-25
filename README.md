@@ -111,7 +111,7 @@ The application includes pre-configured GPX files:
 ## Run a Local Web Server to run the site locally
 
 - Using Python:
-# Python 3
+### Python 3
 cd /Users/thomascougnon2/Projects/Merelroute
 python3 -m http.server 8000
 
