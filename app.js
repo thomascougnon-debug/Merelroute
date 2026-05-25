@@ -178,7 +178,7 @@ function loadGPXFromURL(url) {
 async function loadFixedGPXFiles() {
     try {
         // Load route
-        const routeGPX = await loadGPXFromURL('sample-route.gpx');
+        const routeGPX = await loadGPXFromURL('baillamont-route-1.gpx');
         const points = extractTrackPoints(routeGPX);
         drawRoute(points);
     } catch (error) {
@@ -188,9 +188,9 @@ async function loadFixedGPXFiles() {
     try {
         // Load waypoints from 3 separate files
         const waypointFiles = [
-            'sample-waypoint-1.gpx',
-            'sample-waypoint-2.gpx',
-            'sample-waypoint-3.gpx'
+            'baillamont-birdhouse-1.gpx',
+            'baillamont-birdhouse-2.gpx',
+            'baillamont-birdhouse-3.gpx'
         ];
         
         const allWaypoints = [];

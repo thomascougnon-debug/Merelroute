@@ -28,8 +28,8 @@ A simple, mobile-friendly web application to view GPX routes and waypoints on an
 ### Customizing GPX Files
 
 The route and waypoints are loaded from fixed GPX files:
-- **Route**: `sample-route.gpx` (contains track points)
-- **Waypoints**: `sample-waypoint-1.gpx`, `sample-waypoint-2.gpx`, `sample-waypoint-3.gpx` (one file per waypoint)
+- **Route**: `baillamont-route-1.gpx` (contains track points)
+- **Waypoints**: `baillamont-birdhouse-1.gpx`, `baillamont-birdhouse-2.gpx`, `baillamont-birdhouse-3.gpx` (one file per waypoint)
 
 To change the route or waypoints, replace the contents of these files with your own GPX data. The app will automatically load the updated files when you refresh the page.
 
@@ -65,10 +65,10 @@ To change the route or waypoints, replace the contents of these files with your 
 ## Sample Files
 
 The application includes pre-configured GPX files:
-- `sample-route.gpx` - Example route track
-- `sample-waypoint-1.gpx` - First waypoint (Start Point)
-- `sample-waypoint-2.gpx` - Second waypoint (Midpoint)
-- `sample-waypoint-3.gpx` - Third waypoint (End Point)
+- `baillamont-route-1.gpx` - Example route track
+- `baillamont-birdhouse-1.gpx` - First waypoint (Start Point)
+- `baillamont-birdhouse-2.gpx` - Second waypoint (Midpoint)
+- `baillamont-birdhouse-3.gpx` - Third waypoint (End Point)
 
 ## Browser Compatibility
 
@@ -81,10 +81,10 @@ The application includes pre-configured GPX files:
 - `index.html` - Main HTML structure
 - `style.css` - Mobile-responsive styling
 - `app.js` - Map functionality and automatic GPX loading
-- `sample-route.gpx` - Fixed route file
-- `sample-waypoint-1.gpx` - Fixed waypoint file 1
-- `sample-waypoint-2.gpx` - Fixed waypoint file 2
-- `sample-waypoint-3.gpx` - Fixed waypoint file 3
+- `baillamont-route-1.gpx` - Fixed route file
+- `baillamont-birdhouse-1.gpx` - Fixed waypoint file 1
+- `baillamont-birdhouse-2.gpx` - Fixed waypoint file 2
+- `baillamont-birdhouse-3.gpx` - Fixed waypoint file 3
 
 ## Dependencies
 
