@@ -116,3 +116,29 @@ cd /Users/thomascougnon2/Projects/Merelroute
 python3 -m http.server 8000
 
 Then open http://localhost:8000 in the browser
+
+
+# Application structure redesign (29/5/2026)
+
+### What changed
+- index.html
+  - Rewritten as a landing page with:
+    - header section containing an image and title
+    - content section with article text
+    - route selection card linking to baillamont-route-1.html
+    - footer placeholder
+
+- baillamont-route-1.html
+  - Added a new dedicated route page
+  - Includes a map container, back link, route title, and controls
+  - Uses `data-gpx="baillamont-route-1.gpx"` to load the route
+
+- app.js
+  - Updated to initialize only when a map is present
+  - Added support for loading a specific GPX file from `body.dataset.gpx`
+  - Preserved geolocation and route rendering logic for the route page
+
+- style.css
+  - Added layout styles for header, content, footer, and route cards
+  - Kept Leaflet map styling and mobile responsiveness
+

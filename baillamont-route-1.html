@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baillamont Route 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-gpx="baillamont-route-1.gpx" class="route-page">
+    <header class="page-header">
+        <a class="back-link" href="index.html">← Back to route list</a>
+        <div class="page-header-title">
+            <h1>Baillamont Route 1</h1>
+            <p>Open the route map and follow the track with nearby waypoint markers.</p>
+        </div>
+    </header>
+
+    <div id="map"></div>
+
+    <div id="controls">
+        <div id="info">
+            <h2>Route map</h2>
+            <p id="location-status">Waiting for location...</p>
+        </div>
+        <button id="center-location-btn">📍 Center on My Location</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
