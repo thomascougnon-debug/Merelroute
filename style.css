@@ -21,10 +21,10 @@ body {
 .page-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 18px;
-    padding: 24px;
+    padding: 32px;
     background: #ffffff;
     border-radius: 18px;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
@@ -33,16 +33,18 @@ body {
 
 .brand {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
+    text-align: center;
 }
 
 .brand img {
-    width: 72px;
-    height: 72px;
-    border-radius: 18px;
+    width: 240px;
+    height: 240px;
+    border-radius: 22px;
     background: #ffffff;
-    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.12);
+    box-shadow: 0 12px 28px rgba(33, 150, 243, 0.16);
 }
 
 .brand h1,

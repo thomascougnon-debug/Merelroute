@@ -95,8 +95,8 @@ if (document.getElementById('map')) {
     }
 
     function getPhotoUrlFromWaypointFile(file) {
-        const fileName = file.replace(/\.gpx$/i, '');
-        return `photos/${fileName}.jpeg`;
+        const baseName = file.split('/').pop().replace(/\.gpx$/i, '');
+        return `photos/${baseName}.jpeg`;
     }
 
     // Extract waypoints from GPX
@@ -219,9 +219,9 @@ if (document.getElementById('map')) {
     const waypointFiles = document.body.dataset.waypoints
         ? document.body.dataset.waypoints.split(',').map(file => file.trim()).filter(Boolean)
         : [
-            'baillamont-birdhouse-1.gpx',
-            'baillamont-birdhouse-2.gpx',
-            'baillamont-birdhouse-3.gpx'
+            'gpx/baillamont-birdhouse-1.gpx',
+            'gpx/baillamont-birdhouse-2.gpx',
+            'gpx/baillamont-birdhouse-3.gpx'
         ];
     const centerLocationBtn = document.getElementById('center-location-btn');
 
