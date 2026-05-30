@@ -94,8 +94,13 @@ if (document.getElementById('map')) {
         return points;
     }
 
+    function getPhotoUrlFromWaypointFile(file) {
+        const fileName = file.replace(/\.gpx$/i, '');
+        return `photos/${fileName}.jpeg`;
+    }
+
     // Extract waypoints from GPX
-    function extractWaypoints(gpxDOM) {
+    function extractWaypoints(gpxDOM, sourceFile) {
         const waypoints = [];
         const wpts = gpxDOM.getElementsByTagName('wpt');
         
@@ -109,7 +114,8 @@ if (document.getElementById('map')) {
                 waypoints.push({
                     lat,
                     lon,
-                    name
+                    name,
+                    photo: getPhotoUrlFromWaypointFile(sourceFile)
                 });
             }
         }
@@ -145,6 +151,12 @@ if (document.getElementById('map')) {
         waypointsLayer.clearLayers();
         
         waypoints.forEach((wp) => {
+            const popupHtml = `
+                <div style="text-align:center; max-width:280px;">
+                    <img src="${wp.photo}" alt="${wp.name}" style="width:100%; height:auto; border-radius:8px; display:block; margin:0 auto;" loading="lazy" />
+                </div>
+            `;
+
             L.marker([wp.lat, wp.lon], {
                 icon: L.icon({
                     iconUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI4IiBmaWxsPSIjRkY5ODAwIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==',
@@ -152,7 +164,7 @@ if (document.getElementById('map')) {
                     iconAnchor: [12, 12]
                 })
             }).addTo(waypointsLayer)
-              .bindPopup(`<strong>${wp.name}</strong>`);
+              .bindPopup(popupHtml, { maxWidth: 280 });
         });
     }
 
@@ -191,7 +203,7 @@ if (document.getElementById('map')) {
         for (const file of gpxFiles) {
             try {
                 const gpxDOM = await loadGPXFromURL(file);
-                const waypoints = extractWaypoints(gpxDOM);
+                const waypoints = extractWaypoints(gpxDOM, file);
                 allWaypoints.push(...waypoints);
             } catch (error) {
                 console.warn(`Warning: Could not load ${file}: ${error.message}`);
