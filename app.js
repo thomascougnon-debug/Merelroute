@@ -157,7 +157,7 @@ if (document.getElementById('map')) {
                 </div>
             `;
 
-            L.marker([wp.lat, wp.lon], {
+            const marker = L.marker([wp.lat, wp.lon], {
                 icon: L.icon({
                     iconUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI4IiBmaWxsPSIjRkY5ODAwIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==',
                     iconSize: [24, 24],
@@ -165,6 +165,10 @@ if (document.getElementById('map')) {
                 })
             }).addTo(waypointsLayer)
               .bindPopup(popupHtml, { maxWidth: 280 });
+
+            marker.on('mouseover', () => marker.openPopup());
+            marker.on('mouseout', () => marker.closePopup());
+            marker.on('click', () => marker.openPopup());
         });
     }
 
