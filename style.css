@@ -17,7 +17,24 @@ body {
     padding: 24px;
 }
 
-.site-header,
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 32px;
+    min-height: 280px;
+    background-color: #dfeaf7;
+    background-image: url('images/backgound-1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
 .page-header {
     display: flex;
     align-items: center;
@@ -49,7 +66,7 @@ body {
 
 .brand h1,
 .page-header-title h1 {
-    font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+    font-size: clamp(2.4rem, 4.2vw, 3.4rem);
     margin-bottom: 8px;
 }
 

@@ -152,8 +152,8 @@ if (document.getElementById('map')) {
         
         waypoints.forEach((wp) => {
             const popupHtml = `
-                <div style="text-align:center; max-width:280px;">
-                    <img src="${wp.photo}" alt="${wp.name}" style="width:100%; height:auto; border-radius:8px; display:block; margin:0 auto;" loading="lazy" />
+                <div style="text-align:center; width:min(64vw, 220px); padding:1px;">
+                    <img src="${wp.photo}" alt="${wp.name}" style="width:100%; max-width:200px; height:auto; border-radius:7px; display:block; margin:0 auto;" loading="lazy" />
                 </div>
             `;
 
@@ -164,10 +164,8 @@ if (document.getElementById('map')) {
                     iconAnchor: [12, 12]
                 })
             }).addTo(waypointsLayer)
-              .bindPopup(popupHtml, { maxWidth: 280 });
+              .bindPopup(popupHtml, { maxWidth: 220, keepInView: true });
 
-            marker.on('mouseover', () => marker.openPopup());
-            marker.on('mouseout', () => marker.closePopup());
             marker.on('click', () => marker.openPopup());
         });
     }
